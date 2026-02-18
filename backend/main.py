@@ -21,7 +21,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "resume-vs-jd-production.up.railway.app",        # ← you'll know this after step below
+        "https://resume-vs-jd-production.up.railway.app",   # ← add https://
     ],
     allow_credentials=True,
     allow_methods=["*"],
