@@ -21,8 +21,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "https://resume-agent.vercel.app",   # ← add your Vercel URL here
-        "https://YOUR-APP.vercel.app",        # ← you'll know this after step below
+        "resume-vs-jd-production.up.railway.app",        # ← you'll know this after step below
     ],
     allow_credentials=True,
     allow_methods=["*"],
