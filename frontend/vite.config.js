@@ -12,5 +12,8 @@ export default defineConfig({
         secure: false,
       }
     }
+  },
+  preview: {
+    allowedHosts: ['resume-vs-jd-production.up.railway.app']
   }
 })
