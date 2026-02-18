@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react'
 import { Plus, X, Briefcase, Building2, Code2, FolderGit2, ChevronDown, Sparkles, Upload, FileText, Loader2, CheckCircle2 } from 'lucide-react'
 
-const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN || 'your-strong-secret-token-here'
+const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN
+const API_BASE = import.meta.env.VITE_API_URL || ''
 
 export default function InputForm({ onSubmit, loading }) {
   const [form, setForm] = useState({
@@ -59,7 +60,7 @@ export default function InputForm({ onSubmit, loading }) {
     formData.append('file', file)
 
     try {
-      const res = await fetch('/api/parse-resume', {
+      const res = await fetch(`${API_BASE}/api/parse-resume`, {
         method: 'POST',
         headers: { 'X-Access-Token': ACCESS_TOKEN },
         body: formData,

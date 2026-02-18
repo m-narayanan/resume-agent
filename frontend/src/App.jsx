@@ -3,8 +3,8 @@ import InputForm from './components/InputForm'
 import ResultsPanel from './components/ResultsPanel'
 import { Sparkles } from 'lucide-react'
 
-const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN || 'your-strong-secret-token-here'
-
+const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN
+const API_BASE = import.meta.env.VITE_API_URL || ''
 export default function App() {
   const [results, setResults] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -35,7 +35,7 @@ export default function App() {
     }, 4000)
 
     try {
-      const response = await fetch('/api/analyze', {
+      const response = await fetch(`${API_BASE}/api/analyze`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

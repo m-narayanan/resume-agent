@@ -19,8 +19,10 @@ app = FastAPI(title="Resume Agent API", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173", "http://localhost:3000",
-        "http://127.0.0.1:5173", "http://127.0.0.1:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://resume-agent.vercel.app",   # ← add your Vercel URL here
+        "https://YOUR-APP.vercel.app",        # ← you'll know this after step below
     ],
     allow_credentials=True,
     allow_methods=["*"],
